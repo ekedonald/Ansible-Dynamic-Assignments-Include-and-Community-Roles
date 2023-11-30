@@ -24,11 +24,35 @@ git checkout -b dynamic-assignments
 mkdir dynamic-assignments && cd dynamic-assignmnets && touch env-vars.yml
 ```
 
+* Update the `env-vars.yml` file with the following codebase:
+
+```sh
+---
+- name: collate variables from env specific file, if it exists
+  hosts: all
+  tasks:
+    - name: looping through list of available files
+      include_vars: "{{ item }}"
+      with_first_found:
+        - files:
+            - dev.yml
+            - stage.yml
+            - prod.yml
+            - uat.yml
+          paths:
+            - "{{ playbook_dir }}/../env-vars"
+      tags:
+        - always
+```
+
+There are 3 things to notice in the codebase above:
+1. The `include_vars` module was used instead of `include` because Ansible developers decided to seperate different features of the module. From Ansible version 2.8, the `include` module was depreciated and variants of `include_*` must be used (i.e. [include_role](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_role_module.html#include-role-module), [include_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html#include-tasks-module) and [include_vars](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_vars_module.html#include-vars-module)).
+
+2. We made use of the following [special variables](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html): `{{ playbook_dir }}` and `{{ inventory_file }}`.
+
 * Go a step back in the directory, create an `env-vars` directory and create the following files: `dev.yml`, `stage.yml`, `uat.yml` and `prod.yml` inside the directory.
 
 * The layout of the `ansible-config-mgt` directory should like this:
-
-* 
 
 * Update the `site.yml` playbook configuration file to import files from the `dynamic-assignments` directory.
 
