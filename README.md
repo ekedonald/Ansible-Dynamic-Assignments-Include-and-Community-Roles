@@ -26,8 +26,8 @@ The following steps are taken to Implement Ansible Dynamic Assignments (Include)
 
 ### Step 8: Update the `ansible-config-mgt` repository on GitHub with the latest configurations
 
-### Step 9: Run the Ansible Playbook for the Apache role
+### Step 9: Run the Ansible Playbook with the Apache role
 
-### Step 10:Run the Ansible Playbook for the Nginx role
+### Step 10:Run the Ansible Playbook with the Nginx role
 
-### Step 11: Run the Ansible Playbook for the MySQL role
+### Step 11: Run the Ansible Playbook with the MySQL role
