@@ -12,6 +12,20 @@ The following steps are taken to Implement Ansible Dynamic Assignments (Include)
 
 ### Step 1: Introduce Dynamic Assignment into your File Structure
 
+* Create and switch into the `dynamic-assignments` branch.
+
+```sh
+git checkout -b dynamic-assignments
+```
+
+* Create a `dynamic-assignments` directory and create an `env-vars.yml` file inside the directory.
+
+```sh
+mkdir dynamic-assignments && cd dynamic-assignmnets && touch env-vars.yml
+```
+
+* 
+
 ### Step 2: Update `site.yml` with Dynamic Assignments
 
 ### Step 3: Merge the changes from the dynamic-assignments branch into the main branch
