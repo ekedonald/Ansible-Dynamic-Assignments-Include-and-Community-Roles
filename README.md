@@ -24,7 +24,21 @@ git checkout -b dynamic-assignments
 mkdir dynamic-assignments && cd dynamic-assignmnets && touch env-vars.yml
 ```
 
+* Go a step back in the directory, create an `env-vars` directory and create the following files: `dev.yml`, `stage.yml`, `uat.yml` and `prod.yml` inside the directory.
+
+* The layout of the `ansible-config-mgt` directory should like this:
+
 * 
+
+* Update the `site.yml` playbook configuration file to import files from the `dynamic-assignments` directory.
+
+```sh
+---
+- hosts: all
+  become: true
+  name: Import Dynamic Variables
+- import_playbook: ../dynamic-assignments/env-vars.yml
+```
 
 ### Step 2: Update `site.yml` with Dynamic Assignments
 
