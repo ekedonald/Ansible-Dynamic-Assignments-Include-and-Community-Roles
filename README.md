@@ -49,6 +49,9 @@ There are 3 things to notice in the codebase above:
 1. The `include_vars` module was used instead of `include` because Ansible developers decided to seperate different features of the module. From Ansible version 2.8, the `include` module was depreciated and variants of `include_*` must be used (i.e. [include_role](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_role_module.html#include-role-module), [include_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html#include-tasks-module) and [include_vars](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_vars_module.html#include-vars-module)).
 
 2. We made use of the following [special variables](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html): `{{ playbook_dir }}` and `{{ inventory_file }}`.
+The `{{ playbook_dir }}` helps Ansible determine the location of the running playbook and navigation to other paths on the filesystem while the `{{ inventory_file }}` will dynamically resolve the name of the inventory file being used then append `.yml` so that it picks up the required file within the `env-vars` directory.
+
+3. The variables are included using the `with_first_found` loop which is used to loop through the list of files and the first one is used. This is good so that what we can always set default values in case an environment specific `env` file does not exist.
 
 * Go a step back in the directory, create an `env-vars` directory and create the following files: `dev.yml`, `stage.yml`, `uat.yml` and `prod.yml` inside the directory.
 
