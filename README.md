@@ -187,9 +187,9 @@ git push --set-upstream origin roles-feature
 
 * The following steps are taken to setup a Personal Access Token:
 
-1. Go to your GitHub Account, click on your Profile Icon and click on settings.
-2. Click on `Developer Settings`.
-3. Click on `Personal access tokens` and `Tokens(classic)`
+1. Go to your GitHub Account, click on your Profile Icon and click on `settings`
+2. Click on `Developer Settings`
+3. Click on `Personal access tokens` and `Tokens (classic)`
 4. Click on `Generate new token` and `Generate new token (classic)`
 5. Give the Token a name of your choice (i.e. dynamic assignment project) and tick all the boxes.
 6. Click on `Generate token`
@@ -262,7 +262,7 @@ git add ../env-vars/dev.yml ../playbooks/site.yml loadbalancers.yml && git commi
 
 * Push the changes to the `main` branch.
 
-### Step 9: Run the Ansible Playbook with the Apache role
+### Step 9: Run the Ansible Playbook with the Nginx role
 
 Remember that a webhook was configured to save artifacts in the `ansible-config-artifact` directory on the `Jenkins-Ansible` server in the previous project. Hence, the latest files in the `ansible-config-mgt` repository on GitHub will be stored in the `ansible-config-artifact` directory.
 
@@ -278,9 +278,9 @@ cd /home/ubuntu/ansible-config-artifact/
 ansible-playbook -i inventory/dev playbooks/site.yml
 ```
 
-### Step 10:Run the Ansible Playbook with the Nginx role
+### Step 10:Run the Ansible Playbook with the Apache role
 
-* Change the variables for enabling Apache and Nginx in the `dev.yml` file in the `env-vars` directory to meet the conditions for executing the Nginx role.
+* Change the variables for enabling Apache and Nginx in the `dev.yml` file in the `env-vars` directory to meet the conditions for executing the Apache role.
 
 ```sh
 enable_nginx_lb: false
