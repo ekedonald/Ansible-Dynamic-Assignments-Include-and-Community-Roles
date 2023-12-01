@@ -99,7 +99,7 @@ git push --set-upstream origin dynamic-assignments
 
 * Click on the `Confirm merge` button.
 
-Go to the `ansible-config-mgt` directory on your local machine and run the following command to switch to the `main` branch and pull the changes:
+* Go to the `ansible-config-mgt` directory on your local machine and run the following command to switch to the `main` branch and pull the changes:
 
 ### Step 4: SSH into the Jenkins-Ansible server, pull files from the `ansible-config-mgt` repository and create a `roles-feature` branch
 
