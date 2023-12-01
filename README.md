@@ -246,10 +246,37 @@ enable_apache_lb: false
 load_balancer_is_required: true
 ```
 
-
 ### Step 8: Update the `ansible-config-mgt` repository on GitHub with the latest configurations
 
+* Run the following command to view the untracked files (i.e. the file created and modified files):
+
+```sh
+git status
+```
+
+* Add the untracked files and commit the changes.
+
+```sh
+git add ../env-vars/dev.yml ../playbooks/site.yml loadbalancers.yml && git commit -m "uploaded a configuration file and modified 2 configuration files"
+```
+
+* Push the changes to the `main` branch.
+
 ### Step 9: Run the Ansible Playbook with the Apache role
+
+Remember that a webhook was configured to save artifacts in the `ansible-config-artifact` directory on the `Jenkins-Ansible` server in the previous project. Hence, the latest files in the `ansible-config-mgt` repository on GitHub will be stored in the `ansible-config-artifact` directory.
+
+* Go to the `ansible-config-artifact` directory on the `Jenkisn-Ansible` server.
+
+```sh
+cd /home/ubuntu/ansible-config-artifact/
+```
+
+* Run the Ansible Playbook.
+
+```sh
+ansible-playbook -i inventory/dev playbooks/site.yml
+```
 
 ### Step 10:Run the Ansible Playbook with the Nginx role
 
