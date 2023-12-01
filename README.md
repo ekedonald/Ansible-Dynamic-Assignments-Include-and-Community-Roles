@@ -185,7 +185,7 @@ git push --set-upstream origin roles-feature
 
 * Input your username and for the password you will need to input your Personal Access Token.
 
-* The following steps are taken to setup a Personal Access Token:
+The following steps are taken to setup a Personal Access Token:
 
 1. Go to your GitHub Account, click on your Profile Icon and click on `settings`
 2. Click on `Developer Settings`
