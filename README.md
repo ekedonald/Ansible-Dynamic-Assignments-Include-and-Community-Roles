@@ -322,3 +322,7 @@ load_balancer_is_required: true
 ```sh
 - { role: roles/mysql, when: enable_mysql_lb and load_balancer_is_required }
 ```
+
+* Update the `site.yml` file in the `playbooks` directory to have a `db` host in the **Loadbalancers assignment** import.
+
+* Run the Ansible Playbook.
