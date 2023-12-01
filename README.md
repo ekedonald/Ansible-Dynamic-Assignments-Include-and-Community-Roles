@@ -136,6 +136,36 @@ git checkout -b roles-feature
 
 ### Step 5: Using Ansible-Galaxy, Download Community Roles for Apache, Nginx and MySQL into the roles directory
 
+* Go into the `roles` directory.
+
+```sh
+cd roles
+```
+
+* Create a MySQL role with Ansible-Galaxy using the following command:
+
+```sh
+ansible-galaxy install -p . geerlingguy.mysql
+```
+
+* Create an Nginx role with Ansible-Galaxy using the following command:
+
+```sh
+ansible-galaxy install -p . geerlingguy.nginx
+```
+
+* Create an Apache role with Ansible-Galaxy using the following command:
+
+```sh
+ansible-galaxy install -p . geerlingguy.apache
+```
+
+* Rename the role directories you downloaded.
+
+```sh
+mv geerlingguy.apache/ apache && mv geerlingguy.nginx/ nginx && mv geerlingguy.mysql/ mysql && ll
+```
+
 ### Step 6: Merge changes from the roles-feature into the main branch
 
 ### Step 7: Create a `loadbalancer.yml` file in the static-assignment directory, update the `site.yml` and `dev.yml` file in the playbook and env-vars directories respectively
