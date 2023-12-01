@@ -85,7 +85,7 @@ git status
 git add playbooks/site.yml dynamic-assignments env-vars && git commit -m "updates"
 ```
 
-* Push all changes from the `dynamic-assignments` branch to the main branch.
+* Push all changes from the `dynamic-assignments` branch to the `main` branch.
 
 ```sh
 git push --set-upstream origin dynamic-assignments
@@ -167,6 +167,15 @@ mv geerlingguy.apache/ apache && mv geerlingguy.nginx/ nginx && mv geerlingguy.m
 ```
 
 ### Step 6: Merge changes from the roles-feature into the main branch
+
+* Run the following command to view the untracked files (i.e. the roles directories you just created):
+
+```sh
+cd .. && git status
+```
+
+* Add the untracked files, commit the changes and push all the changes from the `roles-feature` branch to the `main` branch.
+
 
 ### Step 7: Create a `loadbalancer.yml` file in the static-assignment directory, update the `site.yml` and `dev.yml` file in the playbook and env-vars directories respectively
 
