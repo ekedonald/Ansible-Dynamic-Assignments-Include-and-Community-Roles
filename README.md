@@ -272,11 +272,16 @@ Remember that a webhook was configured to save artifacts in the `ansible-config-
 cd /home/ubuntu/ansible-config-artifact/
 ```
 
+![cd ansible-config-artifact](./images/9.%20cd%20:home:ubuntu:ansible-config-artifact.png)
+
 * Run the Ansible Playbook.
 
 ```sh
 ansible-playbook -i inventory/dev playbooks/site.yml
 ```
+
+![ansible playbook nginx1](./images/9.%20ansible%20playbook%20nginx1.png)
+![ansible playbook nginx2](./images/9.%20ansible%20playbook%20nginx2.png)
 
 ### Step 10:Run the Ansible Playbook with the Apache role
 
