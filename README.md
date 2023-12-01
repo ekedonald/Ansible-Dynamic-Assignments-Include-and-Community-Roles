@@ -188,28 +188,60 @@ git push --set-upstream origin roles-feature
 The following steps are taken to setup a Personal Access Token:
 
 1. Go to your GitHub Account, click on your Profile Icon and click on `settings`
+
+![settings](./images/6.%20settings.png)
+
 2. Click on `Developer Settings`
+
+![developer settings](./images/6.%20developer%20settings.png)
+
 3. Click on `Personal access tokens` and `Tokens (classic)`
+
+![personal access tokens](./images/6.%20personal%20access%20token%20&%20tokens%20(classic).png)
+
 4. Click on `Generate new token` and `Generate new token (classic)`
+
+![generate new token](./images/6.%20generate%20new%20token.png)
+
 5. Give the Token a name of your choice (i.e. dynamic assignment project) and tick all the boxes.
+
+![name the token and tick all boxes](./images/6.%20name%20the%20token%20and%20tick%20all%20boxes.png)
+
 6. Click on `Generate token`
+
+![generate token](./images/6.%20generate%20token.png)
+
 7. Copy the token you just created and head back to the `Jenkins-Ansible` terminal.
+
+![copy token](./images/6.%20copy%20token.png)
 
 * Paste the token in the prompt for the password of your GitHub account.
 
+![paste the token password](./images/6.%20paste%20token%20password.png)
+
 * Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
+
+![compare and pull request](./images/6.%20compare%20&%20pull%20request.png)
 
 * Click on the `Create pull request` button.
 
+![create pull request](./images/6.%20create%20pull%20request.png)
+
 * Click on the `Merge pull request` button.
 
+![merge pull request](./images/6.%20merge%20pull%20request.png)
+
 * Click on the `Confirm merge` button.
+
+![confirm merge](./images/6.%20confirm%20merge.png)
 
 * Go to the `ansible-config-mgt` directory on your local machine and run the following command to pull the changes:
 
 ```sh
 git pull
 ```
+
+![git pull](./images/6.%20git%20pull.png)
 
 ### Step 7: Create a `loadbalancer.yml` file in the static-assignments directory, update the `site.yml` and `dev.yml` file in the playbook and env-vars directories respectively
 
