@@ -211,7 +211,25 @@ git push --set-upstream origin roles-feature
 git pull
 ```
 
-### Step 7: Create a `loadbalancer.yml` file in the static-assignment directory, update the `site.yml` and `dev.yml` file in the playbook and env-vars directories respectively
+### Step 7: Create a `loadbalancer.yml` file in the static-assignments directory, update the `site.yml` and `dev.yml` file in the playbook and env-vars directories respectively
+
+* Create a `loadbalancer.yml` file in the `static-assignments` directory.
+
+```sh
+cd static-assignments && touch loadbalancer.yml
+```
+
+* Paste the following codebase to reference your roles and conditions for running your roles in the `loadbalancer.yml` file:
+
+```sh
+- hosts: lb
+  become: true
+  roles:
+    - { role: roles/nginx, when: enable_nginx_lb and load_balancer_is_required }
+    - { role: roles/apache, when: enable_apache_lb and load_balancer_is_required }
+```
+
+
 
 ### Step 8: Update the `ansible-config-mgt` repository on GitHub with the latest configurations
 
