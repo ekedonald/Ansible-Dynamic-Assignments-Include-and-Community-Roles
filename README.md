@@ -229,6 +229,23 @@ cd static-assignments && touch loadbalancer.yml
     - { role: roles/apache, when: enable_apache_lb and load_balancer_is_required }
 ```
 
+* Update the `site.yml` file to import the `loadbalacer.yml` file.
+
+```sh
+- name: Loadbalancer assignment
+  hosts: lb
+- import_playbook: ../static-assignments/loadbalancers.yml
+  when: load_balancdr_is_required
+```
+
+* Declare variables in the `dev.yml` file in the `env-vars` directory to meet the conditions set to execute a role at time.
+
+
+```sh
+enable_nginx_lb: true
+enable_apache_lb: false
+load_balancer_is_required: true
+```
 
 
 ### Step 8: Update the `ansible-config-mgt` repository on GitHub with the latest configurations
