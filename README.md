@@ -285,7 +285,7 @@ ansible-playbook -i inventory/dev playbooks/site.yml
 
 ### Step 10: Run the Ansible Playbook with the Apache role
 
-* Change the variables for enabling Apache and Nginx in the `dev.yml` file in the `env-vars` directory to meet the conditions for executing the Apache role.
+* Change the variables enabling Apache and Nginx in the `dev.yml` file in the `env-vars` directory to meet the conditions for executing the Apache role.
 
 ```sh
 enable_nginx_lb: false
