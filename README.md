@@ -332,16 +332,26 @@ enable_mysql_lb: true
 load_balancer_is_required: true
 ```
 
+![dev.yml](./images/11.%20dev_yml.png)
+
 * Update the `loadbancer.yml` file in the `static-assignments` directory to include the MySQL role and change the host to `db`
 
 ```sh
 - { role: roles/mysql, when: enable_mysql_lb and load_balancer_is_required }
 ```
 
+![loadbalancer.yml](./images/11.%20loadbalancer_yml.png)
+
 * Update the `site.yml` file in the `playbooks` directory to have a `db` host in the **Loadbalancers assignment** import.
+
+![site.yml](./images/11.%20site_yml.png)
 
 * Run the Ansible Playbook.
 
 ```sh
 ansible-playbook -i inventory/dev playbooks/site.yml
 ```
+
+![ansible playbook mysql1](./images/11.%20ansible%20playbook%20mysql1.png)
+![ansible playbook mysql2](./images/11.%20ansible%20playbook%20mysql2.png)
+![ansible playbook mysql3](./images/11.%20ansible%20playbook%20mysql3.png)
