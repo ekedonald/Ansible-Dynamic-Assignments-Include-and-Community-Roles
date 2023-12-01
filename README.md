@@ -293,16 +293,23 @@ enable_apache_lb: true
 load_balancer_is_required: true
 ```
 
+![dev.yml](./images/10.%20dev_yml.png)
+
 * Run the Ansible Playbook.
 
 ```sh
 ansible-playbook -i inventory/dev playbooks/site.yml
 ```
 
+![ansible playbook error apache1](./images/10.%20ansible%20playbook%20error%20apache1.png)
+![ansible playbook error apache2](./images/10.%20ansible%20playbook%20error%20apache2.png)
+
 _Note that the **Ensure Apache has selected state and enabled on boot** task failed when the playbook ran. This is because Nginx and Apache can not run at the same time. To correct this, an `lb2` host will be introduced in the `dev` file in the `inventory` directory and the host on the `loadbalancer.yml` file will be changed to `lb2`_.
 
+![inventory/dev](./images/10.%20inventory:dev.png)
 _The updated `dev` file in the inventory directory_
 
+![loadbalancer.yml](./images/10.%20loadbalancer_yml.png)
 _The updated `loadbalancer.yml` in the `static-assignments` directory_
 
 * Run the Ansible Playbook again.
@@ -310,6 +317,9 @@ _The updated `loadbalancer.yml` in the `static-assignments` directory_
 ```sh
 ansible-playbook -i inventory/dev playbooks/site.yml
 ```
+
+![ansible playbook apache1](./images/10.%20ansible%20playbook%20apache1.png)
+![ansible playbook apache2](./images/10.%20ansible%20playbook%20apache2.png)
 
 ### Step 11: Run the Ansible Playbook with the MySQL role
 
