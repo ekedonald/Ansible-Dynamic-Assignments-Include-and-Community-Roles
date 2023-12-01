@@ -101,6 +101,10 @@ git push --set-upstream origin dynamic-assignments
 
 * Go to the `ansible-config-mgt` directory on your local machine and run the following command to switch to the `main` branch and pull the changes:
 
+```sh
+git checkout main && git pull
+```
+
 ### Step 4: SSH into the Jenkins-Ansible server, pull files from the `ansible-config-mgt` repository and create a `roles-feature` branch
 
 ### Step 5: Using Ansible-Galaxy, Download Community Roles for Apache, Nginx and MySQL into the roles directory
