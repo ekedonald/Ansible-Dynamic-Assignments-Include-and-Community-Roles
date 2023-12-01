@@ -317,7 +317,7 @@ enable_mysql_lb: true
 load_balancer_is_required: true
 ```
 
-* Update the `loadbancer.yml` file in the `static-assignments` directory to include the MySQL role and change the host to `db`.
+* Update the `loadbancer.yml` file in the `static-assignments` directory to include the MySQL role and change the host to `db`
 
 ```sh
 - { role: roles/mysql, when: enable_mysql_lb and load_balancer_is_required }
