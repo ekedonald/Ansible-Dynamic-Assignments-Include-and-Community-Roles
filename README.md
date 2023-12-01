@@ -323,7 +323,7 @@ ansible-playbook -i inventory/dev playbooks/site.yml
 
 ### Step 11: Run the Ansible Playbook with the MySQL role
 
-* Change the variables for enabling Apache, Nginx and MySQL in the `dev.yml` file in the `env-vars` directory to meet the conditions for executing the MySQL role.
+* Change the variables enabling Apache, Nginx and MySQL in the `dev.yml` file in the `env-vars` directory to meet the conditions for executing the MySQL role.
 
 ```sh
 enable_nginx_lb: false
