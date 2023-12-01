@@ -46,6 +46,7 @@ mkdir dynamic-assignments && cd dynamic-assignmnets && touch env-vars.yml
 ```
 
 There are 3 things to notice in the codebase above:
+
 1. The `include_vars` module was used instead of `include` because Ansible developers decided to seperate different features of the module. From Ansible version 2.8, the `include` module was depreciated and variants of `include_*` must be used (i.e. [include_role](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_role_module.html#include-role-module), [include_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html#include-tasks-module) and [include_vars](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_vars_module.html#include-vars-module)).
 
 2. We made use of the following [special variables](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html): `{{ playbook_dir }}` and `{{ inventory_file }}`.
@@ -57,6 +58,9 @@ The `{{ playbook_dir }}` helps Ansible determine the location of the running pla
 
 * The layout of the `ansible-config-mgt` directory should like this:
 
+
+### Step 2: Update `site.yml` with Dynamic Assignments
+
 * Update the `site.yml` playbook configuration file to import files from the `dynamic-assignments` directory.
 
 ```sh
@@ -67,9 +71,25 @@ The `{{ playbook_dir }}` helps Ansible determine the location of the running pla
 - import_playbook: ../dynamic-assignments/env-vars.yml
 ```
 
-### Step 2: Update `site.yml` with Dynamic Assignments
-
 ### Step 3: Merge the changes from the dynamic-assignments branch into the main branch
+
+* Run the following command to view the untracked files (i.e. the file and directory you just created):
+
+```sh
+git status
+```
+
+* Add the untracked files and commit the changes.
+
+```sh
+git add playbooks/site.yml dynamic-assignments env-vars && git commit -m "updates"
+```
+
+* Push all changes from the `dynamic-assignments` branch to the main branch.
+
+```sh
+git push --set-upstream origin dynamic-assignments
+```
 
 ### Step 4: SSH into the Jenkins-Ansible server, pull files from the `ansible-config-mgt` repository and create a `roles-feature` branch
 
