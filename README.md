@@ -240,7 +240,6 @@ cd static-assignments && touch loadbalancer.yml
 
 * Declare variables in the `dev.yml` file in the `env-vars` directory to meet the conditions set to execute a role at time.
 
-
 ```sh
 enable_nginx_lb: true
 enable_apache_lb: false
