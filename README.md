@@ -326,3 +326,7 @@ load_balancer_is_required: true
 * Update the `site.yml` file in the `playbooks` directory to have a `db` host in the **Loadbalancers assignment** import.
 
 * Run the Ansible Playbook.
+
+```sh
+ansible-playbook -i inventory/dev playbooks/site.yml
+```
