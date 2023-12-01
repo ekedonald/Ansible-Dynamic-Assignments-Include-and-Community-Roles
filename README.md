@@ -176,6 +176,40 @@ cd .. && git status
 
 * Add the untracked files, commit the changes and push all the changes from the `roles-feature` branch to the `main` branch.
 
+```sh
+git add roles/apache/ roles/mysql/ roles/nginx/
+git commit -m "Commit new role files into GitHub"
+git push --set-upstream origin roles-feature
+```
+* This will prompt you to input your GitHub account username and password.
+
+* Input your username and for the password you will need to input your Personal Access Token.
+
+* The following steps are taken to setup a Personal Access Token:
+
+1. Go your GitHub Account, click on your Profile Icon and click on settings.
+2. Click on `Developer Settings`.
+3. Click on `Personal access tokens` and `Tokens(classic)`
+4. Click on `Generate new token` and `Generate new token (clasic)`
+5. Give the Token a name of your choice (i.e. dynamic assignment project) and tick all the boxes.
+6. Click on `Generate token`
+7. Copy the token you just created and head back to the `Jenkins-Ansible` terminal.
+
+* Paste the token in the prompt for the password of your GitHub account.
+
+* Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
+
+* Click on the `Create pull request` button.
+
+* Click on the `Merge pull request` button.
+
+* Click on the `Confirm merge` button.
+
+* Go to the `ansible-config-mgt` directory on your local machine and run the following command to pull the changes:
+
+```sh
+git pull
+```
 
 ### Step 7: Create a `loadbalancer.yml` file in the static-assignment directory, update the `site.yml` and `dev.yml` file in the playbook and env-vars directories respectively
 
