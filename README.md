@@ -139,17 +139,23 @@ git checkout main && git pull
 ssh ubuntu@<public_ipv4_address_of_jenkins_server
 ```
 
+![ssh jenkins-ansible](./images/4.%20ssh%20jenkins-ansible.png)
+
 * Check if git is installed on the server.
 
 ```sh
 git --version
 ```
 
+![git version](./images/4.%20git%20--version.png)
+
 * Create and go into the `ansible-config-mgt` directory.
 
 ```sh
 mkdir ansible-config-mgt && cd ansible-config-mgt
 ```
+
+![mkdir ansible-config-mgt && cd ansible-config-mgt](./images/4.%20mkdir%20ansible-config-mgt%20&&%20cd%20ansible-config-mgt.png)
 
 * Run the following commands to initialize a repository, pull files from your `ansible-config-mgt` repository on GitHub, add a new remote repository reference, create and switch to the `roles-feature` branch.
 
@@ -159,6 +165,8 @@ git pull https://github.com/<your-name>/ansible-config-mgt.git
 git remote add origin https://github.com/<your-name>/ansible-config-mgt.git
 git checkout -b roles-feature
 ```
+
+![git init pull remote add checkout roles-feature](./images/4%20git%20init%20pull%20remote%20add%20checkout%20roles-feature.png)
 
 ### Step 5: Using Ansible-Galaxy, Download Community Roles for Apache, Nginx and MySQL into the roles directory
 
