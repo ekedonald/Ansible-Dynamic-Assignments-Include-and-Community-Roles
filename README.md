@@ -403,7 +403,7 @@ ansible-playbook -i inventory/dev playbooks/site.yml
 
 _Note that the **Ensure Apache has selected state and enabled on boot task** failed when the playbook ran because Nginx and Apache can not run simultaneously. To correct this, run an Ansible Adhoc Command to **disable** and **stop** nginx_.
 
-* Run Ansible Adhoc command to disable Nginx on the `lb` host.
+* Run the Ansible Adhoc command to disable Nginx on the `lb` host.
 
 ```sh
 ansible lb -i inventory/dev -m command -a "systemctl disable nginx" -b
@@ -411,7 +411,7 @@ ansible lb -i inventory/dev -m command -a "systemctl disable nginx" -b
 
 ![ansible adhoc disable nginx](./images/10.%20adhoc%20disable%20nginx.png)
 
-* Run Ansible Adhoc Command to stop Nginx on the `lb` host.
+* Run the Ansible Adhoc Command to stop Nginx on the `lb` host.
 
 ```sh
 ansible lb -i inventory/dev -m command -a "systemctl stop nginx" -b
