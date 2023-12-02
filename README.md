@@ -168,7 +168,7 @@ git checkout -b roles-feature
 
 ![git init pull remote add checkout roles-feature](./images/4%20git%20init%20pull%20remote%20add%20checkout%20roles-feature.png)
 
-### Step 5: Using Ansible-Galaxy, Download Community Roles for Apache, Nginx and MySQL into the roles directory
+### Step 5: Using Ansible Galaxy, Download Community Roles for Apache, Nginx and MySQL into the roles directory
 
 * Go into the `roles` directory.
 
@@ -178,7 +178,7 @@ cd roles
 
 ![cd roles](./images/5.%20cd%20roles.png)
 
-* Create a MySQL role with Ansible-Galaxy using the following command:
+* Create a MySQL role with Ansible Galaxy using the following command:
 
 ```sh
 ansible-galaxy install -p . geerlingguy.mysql
@@ -186,7 +186,7 @@ ansible-galaxy install -p . geerlingguy.mysql
 
 ![ansible-galaxy mysql](./images/5.%20ansible-galaxy%20mysql.png)
 
-* Create an Nginx role with Ansible-Galaxy using the following command:
+* Create an Nginx role with Ansible Galaxy using the following command:
 
 ```sh
 ansible-galaxy install -p . geerlingguy.nginx
@@ -194,7 +194,7 @@ ansible-galaxy install -p . geerlingguy.nginx
 
 ![ansible-galaxy nginx](./images/5.%20asnible%20galaxy%20nginx.png)
 
-* Create an Apache role with Ansible-Galaxy using the following command:
+* Create an Apache role with Ansible Galaxy using the following command:
 
 ```sh
 ansible-galaxy install -p . geerlingguy.apache
