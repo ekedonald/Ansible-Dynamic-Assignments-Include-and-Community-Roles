@@ -218,6 +218,8 @@ mv geerlingguy.apache/ apache && mv geerlingguy.nginx/ nginx && mv geerlingguy.m
 cd .. && git status
 ```
 
+![git status](./images/6.%20git%20status.png)
+
 * Add the untracked files, commit the changes and push all the changes from the `roles-feature` branch to the `main` branch.
 
 ```sh
@@ -225,6 +227,9 @@ git add roles/apache/ roles/mysql/ roles/nginx/
 git commit -m "Commit new role files into GitHub"
 git push --set-upstream origin roles-feature
 ```
+
+![git add commit push roles-feature](./images/6.%20git%20add%20roles%20commit%20push%20roles-feature.png)
+
 * This will prompt you to input your GitHub account username and password.
 
 * Input your username and for the password you will need to input your Personal Access Token.
