@@ -229,10 +229,7 @@ git push --set-upstream origin roles-feature
 ```
 
 ![git add commit push roles-feature](./images/6.%20git%20add%20roles%20commit%20push%20roles-feature.png)
-
-* This will prompt you to input your GitHub account username and password.
-
-* Input your username and for the password you will need to input your Personal Access Token.
+_This prompts you to input your GitHub account username and password. Input your username and for the password you will need to input your Personal Access Token_.
 
 The following steps are taken to setup a Personal Access Token:
 
