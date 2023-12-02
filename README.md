@@ -300,6 +300,8 @@ git pull
 cd static-assignments && touch loadbalancer.yml
 ```
 
+![cd static-assignments && touch loadbalancer.yml](./images/7.%20create%20loadbalancer_yml%20file.png)
+
 * Paste the following codebase to reference your roles and conditions for running your roles in the `loadbalancer.yml` file:
 
 ```sh
@@ -310,6 +312,8 @@ cd static-assignments && touch loadbalancer.yml
     - { role: roles/apache, when: enable_apache_lb and load_balancer_is_required }
 ```
 
+![loadbalancer.yml](./images/7.%20loadbalancer_yml.png)
+
 * Update the `site.yml` file to import the `loadbalacer.yml` file.
 
 ```sh
@@ -319,6 +323,8 @@ cd static-assignments && touch loadbalancer.yml
   when: load_balancdr_is_required
 ```
 
+![site.yml](./images/7.%20site_yml.png)
+
 * Declare variables in the `dev.yml` file in the `env-vars` directory to meet the conditions set to execute a role at a time.
 
 ```sh
@@ -326,6 +332,8 @@ enable_nginx_lb: true
 enable_apache_lb: false
 load_balancer_is_required: true
 ```
+
+![dev.yml](./images/7.%20dev_yml.png)
 
 ### Step 8: Update the `ansible-config-mgt` repository on GitHub with the latest configurations
 
