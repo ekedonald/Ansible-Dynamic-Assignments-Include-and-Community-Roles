@@ -79,6 +79,8 @@ The `{{ playbook_dir }}` helps Ansible determine the location of the running pla
 - import_playbook: ../dynamic-assignments/env-vars.yml
 ```
 
+![site.yml](./images/2.%20site_yml.png)
+
 ### Step 3: Merge the changes from the dynamic-assignments branch into the main branch
 
 * Run the following command to view the untracked files (i.e. the file and directory you just created):
@@ -87,11 +89,15 @@ The `{{ playbook_dir }}` helps Ansible determine the location of the running pla
 git status
 ```
 
+![git status](./images/3.%20git%20status.png)
+
 * Add the untracked files and commit the changes.
 
 ```sh
 git add playbooks/site.yml dynamic-assignments env-vars && git commit -m "updates"
 ```
+
+![git add commit](./images/3.%20git%20add%20&&%20commit.png)
 
 * Push all changes from the `dynamic-assignments` branch to the `main` branch.
 
@@ -99,19 +105,31 @@ git add playbooks/site.yml dynamic-assignments env-vars && git commit -m "update
 git push --set-upstream origin dynamic-assignments
 ```
 
+![git push dynamic-assignments](./images/3.%20git%20push%20dynamic-assignments.png)
+
 * Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
+
+![compare and pull request](./images/3.%20compare%20&%20pull%20request.png)
 
 * Click on the `Create pull request` button.
 
+![create pull request](./images/3.%20create%20pull%20request.png)
+
 * Click on the `Merge pull request` button.
 
+![merge pull request](./images/3.%20merge%20pull%20request.png)
+
 * Click on the `Confirm merge` button.
+
+![confirm merge](./images/3.%20confirm%20merge.png)
 
 * Go to the `ansible-config-mgt` directory on your local machine and run the following command to switch to the `main` branch and pull the changes:
 
 ```sh
 git checkout main && git pull
 ```
+
+![git checkout main && git pull](./images/3.%20git%20checkout%20main%20&&%20git%20pull.png)
 
 ### Step 4: SSH into the Jenkins-Ansible server, pull files from the `ansible-config-mgt` repository and create a `roles-feature` branch
 
