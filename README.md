@@ -18,11 +18,15 @@ The following steps are taken to Implement Ansible Dynamic Assignments (Include)
 git checkout -b dynamic-assignments
 ```
 
+![git checkout dynamic-assignments](./images/1.%20git%20checkout%20dynamic%20assignments.png)
+
 * Create a `dynamic-assignments` directory and create an `env-vars.yml` file inside the directory.
 
 ```sh
 mkdir dynamic-assignments && cd dynamic-assignments && touch env-vars.yml
 ```
+
+![mkdir dynamic-assignments && cd dynamic-assignments && touch env-vars.yml](./images/1.%20mkdir%20dynamic%20assignments.png)
 
 * Update the `env-vars.yml` file with the following codebase:
 
@@ -45,6 +49,8 @@ mkdir dynamic-assignments && cd dynamic-assignments && touch env-vars.yml
         - always
 ```
 
+![env-vars.yml](./images/1.%20env-vars_yml.png)
+
 There are 3 things to notice in the codebase above:
 
 1. The `include_vars` module was used instead of `include` because Ansible developers decided to separate different features of the module. From Ansible version 2.8, the `include` module was depreciated and variants of `include_*` must be used (i.e. [include_role](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_role_module.html#include-role-module), [include_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html#include-tasks-module) and [include_vars](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_vars_module.html#include-vars-module)).
@@ -57,6 +63,8 @@ The `{{ playbook_dir }}` helps Ansible determine the location of the running pla
 * Go a step back in the directory, create an `env-vars` directory and create the following files: `dev.yml`, `stage.yml`, `uat.yml` and `prod.yml` inside the directory.
 
 * The layout of the `ansible-config-mgt` directory should like this:
+
+![layout ansible-config-mgt](./images/1.%20layout%20ansible-config-mgt.png)
 
 
 ### Step 2: Update `site.yml` with Dynamic Assignments
