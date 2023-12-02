@@ -378,6 +378,7 @@ ansible-playbook -i inventory/dev playbooks/site.yml
 
 ![ansible playbook nginx1](./images/9.%20ansible%20playbook%20nginx1.png)
 ![ansible playbook nginx2](./images/9.%20ansible%20playbook%20nginx2.png)
+![ansible playbook nginx3](./images/9.%20ansible%20playbook%20nginx3.png)
 
 ### Step 10: Run the Ansible Playbook with the Apache role
 
@@ -400,13 +401,23 @@ ansible-playbook -i inventory/dev playbooks/site.yml
 ![ansible playbook error apache1](./images/10.%20ansible%20playbook%20error%20apache1.png)
 ![ansible playbook error apache2](./images/10.%20ansible%20playbook%20error%20apache2.png)
 
-_Note that the **Ensure Apache has selected state and enabled on boot task** failed when the playbook ran because Nginx and Apache can not run simultaneously. To correct this, an `lb2` host will be introduced in the `dev` file in the `inventory` directory and the host on the `loadbalancer.yml` file will be changed to `lb2`_.
+_Note that the **Ensure Apache has selected state and enabled on boot task** failed when the playbook ran because Nginx and Apache can not run simultaneously. To correct this, run an Ansible Adhoc Command to **disable** and **stop** nginx_.
 
-![inventory/dev](./images/10.%20inventory:dev.png)
-_The updated `dev` file in the inventory directory_
+* Run Ansible Adhoc command to disable Nginx on the `lb` host.
 
-![loadbalancer.yml](./images/10.%20loadbalancer_yml.png)
-_The updated `loadbalancer.yml` in the `static-assignments` directory_
+```sh
+ansible lb -i inventory/dev -m command -a "systemctl disable nginx" -b
+```
+
+![ansible adhoc disable nginx](./images/10.%20adhoc%20disable%20nginx.png)
+
+* Run Ansible Adhoc Command to stop Nginx on the `lb` host.
+
+```sh
+ansible lb -i inventory/dev -m command -a "systemctl stop nginx" -b
+```
+
+![ansible adhoc stop nginx](./images/10.%20adhoc%20stop%20nginx.png)
 
 * Run the Ansible Playbook again.
 
@@ -451,3 +462,4 @@ ansible-playbook -i inventory/dev playbooks/site.yml
 ![ansible playbook mysql1](./images/11.%20ansible%20playbook%20mysql1.png)
 ![ansible playbook mysql2](./images/11.%20ansible%20playbook%20mysql2.png)
 ![ansible playbook mysql3](./images/11.%20ansible%20playbook%20mysql3.png)
+![ansible playbook mysql4](./images/11.%20ansible%20playbook%20mysql4.png)
