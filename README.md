@@ -343,13 +343,23 @@ load_balancer_is_required: true
 git status
 ```
 
+![git status](./images/8.%20git%20status.png)
+
 * Add the untracked files and commit the changes.
 
 ```sh
 git add ../env-vars/dev.yml ../playbooks/site.yml loadbalancers.yml && git commit -m "uploaded a configuration file and modified 2 configuration files"
 ```
 
+![git add commit](./images/8.%20git%20add%20commit.png)
+
 * Push the changes to the `main` branch.
+
+```sh
+git push
+```
+
+![git push](./images/8.%20git%20push.png)
 
 ### Step 9: Run the Ansible Playbook with the Nginx role
 
