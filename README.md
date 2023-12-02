@@ -176,11 +176,15 @@ git checkout -b roles-feature
 cd roles
 ```
 
+![cd roles](./images/5.%20cd%20roles.png)
+
 * Create a MySQL role with Ansible-Galaxy using the following command:
 
 ```sh
 ansible-galaxy install -p . geerlingguy.mysql
 ```
+
+![ansible-galaxy mysql](./images/5.%20ansible-galaxy%20mysql.png)
 
 * Create an Nginx role with Ansible-Galaxy using the following command:
 
@@ -188,17 +192,23 @@ ansible-galaxy install -p . geerlingguy.mysql
 ansible-galaxy install -p . geerlingguy.nginx
 ```
 
+![ansible-galaxy nginx](./images/5.%20asnible%20galaxy%20nginx.png)
+
 * Create an Apache role with Ansible-Galaxy using the following command:
 
 ```sh
 ansible-galaxy install -p . geerlingguy.apache
 ```
 
+![ansible-galaxy apache](./images/5.%20ansible%20galaxy%20apache.png)
+
 * Rename the role directories you downloaded.
 
 ```sh
 mv geerlingguy.apache/ apache && mv geerlingguy.nginx/ nginx && mv geerlingguy.mysql/ mysql && ll
 ```
+
+![rename the role directories](./images/5%20rename%20the%20role%20directories.png)
 
 ### Step 6: Merge changes from the roles-feature into the main branch
 
